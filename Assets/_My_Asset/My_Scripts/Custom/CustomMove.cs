@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CustomMove : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private NavMeshAgent agent;
+    
 
-    // Update is called once per frame
-    void Update()
+    public void MoveToPoint(Transform point)
     {
-        
+        agent.SetDestination(point.position);
     }
 }

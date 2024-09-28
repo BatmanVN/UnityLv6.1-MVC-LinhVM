@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class CustomController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private CustomMove customMove;
+    [SerializeField] private Transform point;
+    [SerializeField] private Transform chair;
 
-    // Update is called once per frame
-    void Update()
+    private void Move()
     {
-        
+        customMove.MoveToPoint(point);
+        float distance = Vector3.Distance(transform.position, point.position);
+        if (distance < 2.7f)
+        {
+            transform.LookAt(chair);
+            transform.Rotate(0, 180, 0);
+        }
+        Debug.Log(distance);
+    }
+    private void Update()
+    {
+        Move();
     }
 }
