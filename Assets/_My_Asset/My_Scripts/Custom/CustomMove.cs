@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class CustomMove : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
-    
 
     public void MoveToPoint(Transform point)
     {

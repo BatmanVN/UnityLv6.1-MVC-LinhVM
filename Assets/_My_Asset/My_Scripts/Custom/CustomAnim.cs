@@ -6,13 +6,23 @@ using UnityEngine.AI;
 public class CustomAnim : MonoBehaviour
 {
     private const string moveParaname = "move";
+    private const string sitParaname = "Sit";
+
     [SerializeField] private Animator anim;
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private float animSmoothTime;
-    public void StatusAnim()
+    private void StatusAnim()
     {
         float speed = agent.velocity.magnitude / agent.speed;
         anim.SetFloat(moveParaname, speed, animSmoothTime, Time.deltaTime);
+    }
+    public void Sitdown()
+    {
+        anim.SetBool(sitParaname, true);
+    }
+    public void StandUp()
+    {
+        anim.SetBool(sitParaname, false);
     }
     private void Update()
     {
