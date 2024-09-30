@@ -15,16 +15,18 @@ public class CustomController : MonoBehaviour
     [SerializeField] private UnityEvent onStandup;
     private bool isRandom;
     private bool move;
+
+    public int RandomPoint { get => randomPoint; set => randomPoint = value; }
+
     private void Start()
     {
-        randomPoint = Random.Range(0, ChairManager.Instance.ListSitPoint.Count);
+        RandomPoint = Random.Range(0, ChairManager.Instance.ListSitPoint.Count);
     }
     private void Move()
     {
-        sitPoint = ChairManager.Instance.ListSitPoint[randomPoint];
-        chairPoint = ChairManager.Instance.ListChair[randomPoint];
+        sitPoint = ChairManager.Instance.ListSitPoint[RandomPoint];
+        chairPoint = ChairManager.Instance.ListChair[RandomPoint];
         customMove.MoveToPoint(sitPoint);
-        //float distance = Vector3.Distance(transform.position, sitPoint.position);
         Vector3 rotate = (sitPoint.position - chairPoint.position).normalized;
         if (customMove.EndOfLine())
         {
@@ -53,15 +55,15 @@ public class CustomController : MonoBehaviour
         StartCoroutine(Standup());
         if (!isRandom)
         {
-            RandomPoint();
+            RandomSitPoint();
         }
         timeStandup = Random.Range(5, 7);
         move = true;
     }
 
-    private void RandomPoint()
+    private void RandomSitPoint()
     {
-        randomPoint = Random.Range(0, ChairManager.Instance.ListSitPoint.Count);
+        RandomPoint = Random.Range(0, ChairManager.Instance.ListSitPoint.Count);
         isRandom = true;
     }
     private void Update()

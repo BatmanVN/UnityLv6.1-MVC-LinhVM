@@ -22,7 +22,7 @@ public class CustomMove : MonoBehaviour
         {
             return true;
         }
-        else return false;
+        return false;
     }
 
 }

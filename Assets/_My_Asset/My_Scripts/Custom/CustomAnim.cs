@@ -16,13 +16,13 @@ public class CustomAnim : MonoBehaviour
     public void Sitdown()
     {
         anim.SetBool(StringConst.sitParaname, true);
-        agent.enabled = false;
+        agent.isStopped = true;
     }
     public void StandUp()
     {
         anim.SetBool(StringConst.sitParaname, false);
         anim.SetTrigger(StringConst.standParaname);
-        agent.enabled = true;
+        agent.isStopped = false;
     }
     private void Update()
     {

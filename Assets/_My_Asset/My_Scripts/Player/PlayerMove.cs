@@ -30,7 +30,7 @@ public class PlayerMove : MonoBehaviour
             agent.SetDestination(sitPoint.position);
             float distance = Vector3.Distance(transform.position, sitPoint.position);
             Vector3 rotate = (sitPoint.position - target.position).normalized;
-            if (/*!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance*/ distance <= 1f)
+            if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance /*distance <= 1f*/)
             {
                 transform.rotation = Quaternion.LookRotation(rotate);
                 anim.Sitdown();
