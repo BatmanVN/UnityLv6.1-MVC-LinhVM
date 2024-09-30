@@ -1,53 +1,71 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Events;
 
 public class CustomController : MonoBehaviour
 {
     [SerializeField] private CustomMove customMove;
-    [SerializeField] private Transform point;
-    [SerializeField] private int randomPoint;
     [SerializeField] private Transform sitPoint;
+    [SerializeField] private int randomPoint;
+    [SerializeField] private Transform chairPoint;
     [SerializeField] private float timeStandup;
     [SerializeField] private UnityEvent onSitdown;
     [SerializeField] private UnityEvent onStandup;
+    private bool isRandom;
+    private bool move;
     private void Start()
     {
-        RandomPoint();
+        randomPoint = Random.Range(0, ChairManager.Instance.ListSitPoint.Count);
     }
     private void Move()
     {
-        customMove.MoveToPoint(point);
-        float distance = Vector3.Distance(transform.position, point.position);
-        if (distance < 1f)
+        sitPoint = ChairManager.Instance.ListSitPoint[randomPoint];
+        chairPoint = ChairManager.Instance.ListChair[randomPoint];
+        customMove.MoveToPoint(sitPoint);
+        //float distance = Vector3.Distance(transform.position, sitPoint.position);
+        Vector3 rotate = (sitPoint.position - chairPoint.position).normalized;
+        if (customMove.EndOfLine())
         {
-            transform.LookAt(sitPoint);
-            transform.Rotate(0, 180, 0);
-            StartCoroutine(Sitdown());
+            transform.rotation = Quaternion.LookRotation(rotate);
+            Sitdown();
         }
-        Debug.Log(distance);
+        if (!customMove.EndOfLine())
+            isRandom = false;
+    }
+    private void MoveAgain()
+    {
+        if (!move)
+        {
+            Move();
+        }
     }
     private IEnumerator Standup()
     {
         yield return new WaitForSeconds(timeStandup);
         onStandup?.Invoke();
-        RandomPoint();
+        move = false;
     }
-    private IEnumerator Sitdown()
+    private void Sitdown()
     {
-        yield return new WaitForEndOfFrame();
         onSitdown?.Invoke();
         StartCoroutine(Standup());
+        if (!isRandom)
+        {
+            RandomPoint();
+        }
+        timeStandup = Random.Range(5, 7);
+        move = true;
     }
+
     private void RandomPoint()
     {
         randomPoint = Random.Range(0, ChairManager.Instance.ListSitPoint.Count);
-        point = ChairManager.Instance.ListSitPoint[randomPoint];
-        sitPoint = ChairManager.Instance.ListChair[randomPoint];
+        isRandom = true;
     }
     private void Update()
     {
-        Move();
+        MoveAgain();
     }
 }
