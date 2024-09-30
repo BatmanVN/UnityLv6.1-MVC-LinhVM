@@ -621,7 +621,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52080201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.3, y: 8.8, z: -80.8}
+  m_LocalPosition: {x: -24.3, y: 8.8, z: -88.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -638,7 +638,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 52080201}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 3
   m_Height: 10
   m_Direction: 1
@@ -652,7 +652,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 52080201}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 3
+  m_Radius: 0.1
   m_Speed: 10
   m_Acceleration: 20
   avoidancePriority: 50
@@ -661,7 +661,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 13
+  m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -1647,18 +1647,18 @@ MonoBehaviour:
   - {fileID: 910887193}
   - {fileID: 1914787671}
   - {fileID: 1463817244}
-  listChair:
-  - {fileID: 6509860153809543815}
-  - {fileID: 7715721412876417623}
-  - {fileID: 4733423269892290308}
-  - {fileID: 4733423269601103786}
-  - {fileID: 4733423269429318149}
-  - {fileID: 330795349339293071}
-  - {fileID: 1896367282}
-  - {fileID: 138978679}
-  - {fileID: 1919012547}
-  - {fileID: 1468052260}
-  - {fileID: 4737105224874131996}
+  chairs:
+  - {fileID: 7900910827331507446}
+  - {fileID: 7715721412876417625}
+  - {fileID: 4733423269892290310}
+  - {fileID: 4733423269601103788}
+  - {fileID: 4733423269429318151}
+  - {fileID: 330795349339293073}
+  - {fileID: 1896367284}
+  - {fileID: 862951077}
+  - {fileID: 1919012549}
+  - {fileID: 1468052262}
+  - {fileID: 7834725433512458627}
 --- !u!1 &120024647
 GameObject:
   m_ObjectHideFlags: 0
@@ -2049,6 +2049,10 @@ PrefabInstance:
     - target: {fileID: 8280069094303380458, guid: 9e96f793090b2de49ad0f5ecadade33b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280069094303380458, guid: 9e96f793090b2de49ad0f5ecadade33b, type: 3}
+      propertyPath: m_TagString
+      value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 8280069094303380458, guid: 9e96f793090b2de49ad0f5ecadade33b, type: 3}
       propertyPath: m_NavMeshLayer
@@ -2567,7 +2571,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171511469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.3, y: 9.2, z: -80.8}
+  m_LocalPosition: {x: -38.46, y: 9.2, z: -80.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2621,7 +2625,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 171511469}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 3
+  m_Radius: 0.1
   m_Speed: 10
   m_Acceleration: 20
   avoidancePriority: 50
@@ -2630,7 +2634,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 12
+  m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -2718,7 +2722,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 171511469}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 3
   m_Height: 10
   m_Direction: 1
@@ -3201,7 +3205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202771771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.3, y: 8.8, z: -80.8}
+  m_LocalPosition: {x: -32.8, y: 8.8, z: -80.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3218,7 +3222,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 202771771}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 3
   m_Height: 10
   m_Direction: 1
@@ -3232,7 +3236,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 202771771}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 3
+  m_Radius: 0.1
   m_Speed: 10
   m_Acceleration: 20
   avoidancePriority: 50
@@ -3241,7 +3245,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 13
+  m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -4679,7 +4683,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328860614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.3, y: 9.2, z: -80.8}
+  m_LocalPosition: {x: -16.67, y: 9.2, z: -80.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4696,7 +4700,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 328860614}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 3
   m_Height: 10
   m_Direction: 1
@@ -4747,7 +4751,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 328860614}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 3
+  m_Radius: 0.1
   m_Speed: 10
   m_Acceleration: 20
   avoidancePriority: 50
@@ -4756,7 +4760,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 12
+  m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -5322,7 +5326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392596790}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.3, y: 9.2, z: -80.8}
+  m_LocalPosition: {x: -39.6, y: 9.2, z: -90.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5339,7 +5343,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 392596790}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 3
   m_Height: 10
   m_Direction: 1
@@ -5390,7 +5394,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 392596790}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 3
+  m_Radius: 0.1
   m_Speed: 10
   m_Acceleration: 20
   avoidancePriority: 50
@@ -5399,7 +5403,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 12
+  m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -10605,7 +10609,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 821948246}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 3
+  m_Radius: 0.1
   m_Speed: 10
   m_Acceleration: 20
   avoidancePriority: 50
@@ -10614,7 +10618,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 13
+  m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -10739,7 +10743,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 821948246}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 3
   m_Height: 10
   m_Direction: 1
@@ -11320,6 +11324,17 @@ Transform:
   m_Father: {fileID: 1544805305}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &862951077 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1743315103266925216, guid: 9e96f793090b2de49ad0f5ecadade33b, type: 3}
+  m_PrefabInstance: {fileID: 138978678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1155c8f1c52824ba96984d10c579af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &863148207
 GameObject:
   m_ObjectHideFlags: 0
@@ -13789,7 +13804,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035861490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.3, y: 8.8, z: -80.8}
+  m_LocalPosition: {x: -45.98, y: 8.8, z: -80.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13806,7 +13821,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1035861490}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 3
   m_Height: 10
   m_Direction: 1
@@ -13820,7 +13835,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1035861490}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 3
+  m_Radius: 0.1
   m_Speed: 10
   m_Acceleration: 20
   avoidancePriority: 50
@@ -13829,7 +13844,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 13
+  m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -15120,6 +15135,10 @@ PrefabInstance:
     - target: {fileID: 3032411126719740842, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3032411126719740842, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
+      propertyPath: m_TagString
+      value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 3032411126719740842, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
       propertyPath: m_NavMeshLayer
@@ -17449,6 +17468,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3032411126719740842, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
+      propertyPath: m_TagString
+      value: Chair
+      objectReference: {fileID: 0}
+    - target: {fileID: 3032411126719740842, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -18119,6 +18142,10 @@ PrefabInstance:
     - target: {fileID: 3032411126719740842, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3032411126719740842, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
+      propertyPath: m_TagString
+      value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 3032411126719740842, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
       propertyPath: m_NavMeshLayer
@@ -19651,7 +19678,7 @@ GameObject:
   - component: {fileID: 1468052261}
   m_Layer: 0
   m_Name: Chair10
-  m_TagString: Untagged
+  m_TagString: Chair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -19701,6 +19728,7 @@ MonoBehaviour:
   interactionPoint: {fileID: 1468052260}
   player: {fileID: 0}
   item: {fileID: 11400000, guid: 7b58d8dadc06db5429816c2160b7a373, type: 2}
+  custom: {fileID: 0}
 --- !u!208 &1468052263
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -19866,7 +19894,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474220290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.3, y: 9.2, z: -80.8}
+  m_LocalPosition: {x: -46.94, y: 9.2, z: -89.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19883,7 +19911,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1474220290}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 3
   m_Height: 10
   m_Direction: 1
@@ -19934,7 +19962,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1474220290}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 3
+  m_Radius: 0.1
   m_Speed: 10
   m_Acceleration: 20
   avoidancePriority: 50
@@ -19943,7 +19971,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 12
+  m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -25087,6 +25115,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8280069094303380458, guid: 9e96f793090b2de49ad0f5ecadade33b, type: 3}
+      propertyPath: m_TagString
+      value: Chair
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280069094303380458, guid: 9e96f793090b2de49ad0f5ecadade33b, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -25103,6 +25135,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4714608771381474256, guid: 9e96f793090b2de49ad0f5ecadade33b, type: 3}
   m_PrefabInstance: {fileID: 1896367281}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1896367284 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1743315103266925216, guid: 9e96f793090b2de49ad0f5ecadade33b, type: 3}
+  m_PrefabInstance: {fileID: 1896367281}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1155c8f1c52824ba96984d10c579af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1896452494
 GameObject:
   m_ObjectHideFlags: 0
@@ -25547,6 +25590,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8280069094303380458, guid: 9e96f793090b2de49ad0f5ecadade33b, type: 3}
+      propertyPath: m_TagString
+      value: Chair
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280069094303380458, guid: 9e96f793090b2de49ad0f5ecadade33b, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -25563,6 +25610,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4714608771381474256, guid: 9e96f793090b2de49ad0f5ecadade33b, type: 3}
   m_PrefabInstance: {fileID: 1919012546}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1919012549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1743315103266925216, guid: 9e96f793090b2de49ad0f5ecadade33b, type: 3}
+  m_PrefabInstance: {fileID: 1919012546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1155c8f1c52824ba96984d10c579af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1928003320
 GameObject:
   m_ObjectHideFlags: 0
@@ -26424,7 +26482,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1970368965}
-  - component: {fileID: 1970368966}
   m_Layer: 0
   m_Name: CustomManger
   m_TagString: Untagged
@@ -26439,7 +26496,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970368964}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 27.217556, y: -9.028999, z: 48.743095}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -26457,28 +26514,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1970368966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1970368964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e7bbb6757e71f940b480b68c4aa504e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &1970932911
 GameObject:
   m_ObjectHideFlags: 0
@@ -26845,7 +26880,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985642773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.3, y: 9.2, z: -80.8}
+  m_LocalPosition: {x: -32.6, y: 9.2, z: -89.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26862,7 +26897,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1985642773}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 3
   m_Height: 10
   m_Direction: 1
@@ -26913,7 +26948,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1985642773}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 3
+  m_Radius: 0.1
   m_Speed: 10
   m_Acceleration: 20
   avoidancePriority: 50
@@ -26922,7 +26957,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 12
+  m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -28930,7 +28965,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106148029}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.012219906, y: 0.852522, z: -23.8}
+  m_LocalPosition: {x: 0.012219906, y: 0.852522, z: 11.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -29916,6 +29951,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4714608771381474256, guid: 9e96f793090b2de49ad0f5ecadade33b, type: 3}
   m_PrefabInstance: {fileID: 5042517747537966687}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &330795349339293073 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1743315103266925216, guid: 9e96f793090b2de49ad0f5ecadade33b, type: 3}
+  m_PrefabInstance: {fileID: 5042517747537966687}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1155c8f1c52824ba96984d10c579af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &366175169173852413
 Transform:
   m_ObjectHideFlags: 0
@@ -32228,7 +32274,7 @@ GameObject:
   - component: {fileID: 7834725433512458627}
   m_Layer: 0
   m_Name: BarChair
-  m_TagString: Untagged
+  m_TagString: Chair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -32922,6 +32968,10 @@ PrefabInstance:
     - target: {fileID: 3032411126719740842, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3032411126719740842, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
+      propertyPath: m_TagString
+      value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 3032411126719740842, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
       propertyPath: m_NavMeshLayer
@@ -35009,16 +35059,49 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4733423270730689736, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
   m_PrefabInstance: {fileID: 1319075533}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4733423269429318151 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8435046661905078464, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
+  m_PrefabInstance: {fileID: 1319075533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1155c8f1c52824ba96984d10c579af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4733423269601103786 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4733423270730689736, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
   m_PrefabInstance: {fileID: 1130111842}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4733423269601103788 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8435046661905078464, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
+  m_PrefabInstance: {fileID: 1130111842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1155c8f1c52824ba96984d10c579af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4733423269892290308 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4733423270730689736, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
   m_PrefabInstance: {fileID: 1376197580}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4733423269892290310 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8435046661905078464, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
+  m_PrefabInstance: {fileID: 1376197580}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1155c8f1c52824ba96984d10c579af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4737105224874131996
 Transform:
   m_ObjectHideFlags: 0
@@ -35477,6 +35560,10 @@ PrefabInstance:
     - target: {fileID: 8280069094303380458, guid: 9e96f793090b2de49ad0f5ecadade33b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280069094303380458, guid: 9e96f793090b2de49ad0f5ecadade33b, type: 3}
+      propertyPath: m_TagString
+      value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 8280069094303380458, guid: 9e96f793090b2de49ad0f5ecadade33b, type: 3}
       propertyPath: m_NavMeshLayer
@@ -38709,6 +38796,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4733423270730689736, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
   m_PrefabInstance: {fileID: 3072511422444852895}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7715721412876417625 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8435046661905078464, guid: 908c1c560e0aaa542b149882f1ceb41c, type: 3}
+  m_PrefabInstance: {fileID: 3072511422444852895}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1155c8f1c52824ba96984d10c579af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7732535365330810221
 GameObject:
   m_ObjectHideFlags: 0
@@ -38906,6 +39004,7 @@ MonoBehaviour:
   interactionPoint: {fileID: 4737105224874131996}
   player: {fileID: 0}
   item: {fileID: 11400000, guid: 7b58d8dadc06db5429816c2160b7a373, type: 2}
+  custom: {fileID: 0}
 --- !u!4 &7835662605911112054
 Transform:
   m_ObjectHideFlags: 0
@@ -38970,7 +39069,7 @@ GameObject:
   - component: {fileID: 7900910827331507447}
   m_Layer: 0
   m_Name: Chair1
-  m_TagString: Untagged
+  m_TagString: Chair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -39007,6 +39106,7 @@ MonoBehaviour:
   interactionPoint: {fileID: 6509860153809543815}
   player: {fileID: 0}
   item: {fileID: 11400000, guid: 7b58d8dadc06db5429816c2160b7a373, type: 2}
+  custom: {fileID: 0}
 --- !u!65 &7900910827331507447
 BoxCollider:
   m_ObjectHideFlags: 0
