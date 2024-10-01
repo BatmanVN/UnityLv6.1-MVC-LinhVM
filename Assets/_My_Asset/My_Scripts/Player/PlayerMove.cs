@@ -31,7 +31,7 @@ public class PlayerMove : MonoBehaviour
         {
             sitPoint = target.Find("SitPoint");
             agent.SetDestination(sitPoint.position);
-            float distance = Vector3.Distance(transform.position, sitPoint.position);
+            //float distance = Vector3.Distance(transform.position, sitPoint.position);
             Vector3 rotate = (sitPoint.position - target.position).normalized;
             if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance /*distance <= 1f*/)
             {

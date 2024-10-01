@@ -16,18 +16,7 @@ public class CustomMove : MonoBehaviour
     {
         agent.SetDestination(point);
     }
-    //public Vector3 RandomPosition()
-    //{
-    //    bool asPos;
-    //    Vector3 randomPos = Random.insideUnitSphere * maxDistance + mapCenter.position;
-    //    NavMeshHit hit;
-    //    asPos = NavMesh.SamplePosition(randomPos, out hit, maxDistance, NavMesh.AllAreas);
-    //    if (asPos)
-    //    {
-    //        return hit.position;
-    //    }
-    //    return RandomPosition();
-    //}
+
     public bool EndOfLine()
     {
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)

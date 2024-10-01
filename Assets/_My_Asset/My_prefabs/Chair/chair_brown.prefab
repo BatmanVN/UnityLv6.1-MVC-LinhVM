@@ -118,6 +118,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 7b58d8dadc06db5429816c2160b7a373, type: 2}
   custom: {fileID: 0}
   sitPointDown: {fileID: 0}
+  isFull: 0
 --- !u!208 &6639685294532832962
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -145,7 +146,7 @@ GameObject:
   - component: {fileID: 3072511423504590478}
   m_Layer: 0
   m_Name: SitPoint2
-  m_TagString: Untagged
+  m_TagString: SitPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

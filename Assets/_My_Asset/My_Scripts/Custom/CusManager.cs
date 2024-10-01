@@ -31,7 +31,7 @@ public class CusManager : Singleton<CusManager>
             if (newChair != null && !newChair.isFull)
             {
                 newChair.isFull = true;
-                Debug.Log("Da ngoi: " + newChair.name);
+                //Debug.Log("Da ngoi: " + newChair.name);
             }
         } while (!newChair.isFull);
         return newChair;
