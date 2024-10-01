@@ -11,16 +11,17 @@ public class Interactable : MonoBehaviour
 
     public Transform InteractionPoint { get => interactionPoint; set => interactionPoint = value; }
     public float Radius { get => radius;}
+    public bool IsFocus { get => isFocus; set => isFocus = value; }
 
     public void Onfocus(Transform playerTrasnform)
     {
-        isFocus = true;
+        IsFocus = true;
         player = playerTrasnform;
     }
 
     public void DeOnFocus()
     {
-        isFocus = false;
+        IsFocus = false;
         player = null;
     }
     private void OnDrawGizmosSelected()

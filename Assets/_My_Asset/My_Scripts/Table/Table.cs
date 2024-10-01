@@ -12,15 +12,15 @@ public class Table : MonoBehaviour
     {
         for (int i = 0; i < chairs.Count; i++)
         {
-            if (chairs[i].Custom == null)
+            ////if (chairs[i].Custom == null)
+            ////{
+            ////    return chairs[i];
+            //}
+            if (!chairs[i].isFull)
             {
+                chairs[i].isFull = true;
                 return chairs[i];
             }
-            //if (!chairs[i].isFull)
-            //{
-            //    chairs[i].isFull = true;
-            //    return chairs[i];
-            //}
         }
         return null;
     }

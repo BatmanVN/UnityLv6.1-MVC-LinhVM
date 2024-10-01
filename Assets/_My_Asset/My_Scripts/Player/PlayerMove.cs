@@ -20,7 +20,9 @@ public class PlayerMove : MonoBehaviour
     }
     private void Update()
     {
+
         UpdateMove();
+
     }
     public void UpdateMove()
     {

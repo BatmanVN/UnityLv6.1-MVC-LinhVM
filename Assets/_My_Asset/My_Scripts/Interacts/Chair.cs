@@ -17,4 +17,13 @@ public class Chair : Interactable
         Custom = null;
         sitPointDown = transform.Find("SitPoint");
     }
+    //public void SetForcus()
+    //{
+    //    if (isFull)
+    //    {
+    //        IsFocus = true;
+    //    }
+    //    else
+    //        IsFocus = false;
+    //}
 }
