@@ -8,34 +8,28 @@ using UnityEngine.Events;
 public class CustomController : MonoBehaviour
 {
     [SerializeField] private CustomMove customMove;
-    [SerializeField] private Transform sitPoint;
-    [SerializeField] private int randomPoint;
+    [SerializeField] private Chair sitPoint;
     [SerializeField] private Transform chairPoint;
     [SerializeField] private float timeStandup;
     [SerializeField] private UnityEvent onSitdown;
     [SerializeField] private UnityEvent onStandup;
     private bool isRandom;
     private bool move;
-    private bool isSitted;
-    public int RandomPoint { get => randomPoint; set => randomPoint = value; }
 
     private void Start()
     {
-        CheckRandom();
+        GetChair();
     }
     private void Move()
     {
-        sitPoint = ChairManager.Instance.ListSitPoint[RandomPoint];
-        chairPoint = ChairManager.Instance.Chairs[RandomPoint].transform;
-        customMove.MoveToPoint(sitPoint);
-        Vector3 rotate = (sitPoint.position - chairPoint.position).normalized;
+        chairPoint = sitPoint.transform;
+        customMove.MoveToPoint(sitPoint.SitPointDown.position);
+        Vector3 rotate = (sitPoint.SitPointDown.position - chairPoint.position).normalized;
         if (customMove.EndOfLine())
         {
             transform.rotation = Quaternion.LookRotation(rotate);
             Sitdown();
         }
-        if (!customMove.EndOfLine())
-            isRandom = false;
     }
     private void MoveAgain()
     {
@@ -44,41 +38,32 @@ public class CustomController : MonoBehaviour
             Move();
         }
     }
-    private IEnumerator Standup()
+    private void Standup()
     {
-        yield return new WaitForSeconds(timeStandup);
         onStandup?.Invoke();
-        ChairManager.Instance.Chairs[RandomPoint].Custom = null;
-        isSitted = false;
-        if (!isRandom)
-        {
-            CheckRandom();
-            isRandom = true;
-        }
+        RestChair();
+        GetChair();
         move = false;
     }
     private void Sitdown()
     {
         timeStandup = Random.Range(5, 7);
         onSitdown?.Invoke();
-        StartCoroutine(Standup());
+        Invoke(nameof(Standup), timeStandup);
         move = true;
     }
 
-    private void CheckRandom()
+    private void RestChair()
     {
-        var listChair = ChairManager.Instance.Chairs.Where(chair => chair.Custom == null).ToList();
-        if (listChair.Count <= 0)
+        if (sitPoint.Custom != null)
         {
-            return;
+            sitPoint.Custom = null;
         }
-        if (!isSitted)
-        {
-            RandomPoint = Random.Range(0, listChair.Count);
-            listChair[RandomPoint].Custom = this;
-            isSitted = true;
-        }
-        else return;
+    }
+    private void GetChair()
+    {
+        sitPoint = CusManager.Instance.RandomSit();
+        sitPoint.Custom = this;
     }
     private void Update()
     {

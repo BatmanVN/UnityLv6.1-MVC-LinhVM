@@ -12,10 +12,22 @@ public class CustomMove : MonoBehaviour
     {
         
     }
-    public void MoveToPoint(Transform point)
+    public void MoveToPoint(Vector3 point)
     {
-        agent.SetDestination(point.position);
+        agent.SetDestination(point);
     }
+    //public Vector3 RandomPosition()
+    //{
+    //    bool asPos;
+    //    Vector3 randomPos = Random.insideUnitSphere * maxDistance + mapCenter.position;
+    //    NavMeshHit hit;
+    //    asPos = NavMesh.SamplePosition(randomPos, out hit, maxDistance, NavMesh.AllAreas);
+    //    if (asPos)
+    //    {
+    //        return hit.position;
+    //    }
+    //    return RandomPosition();
+    //}
     public bool EndOfLine()
     {
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
