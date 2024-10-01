@@ -57,13 +57,14 @@ public class CustomController : MonoBehaviour
     {
         if (sitPoint.Custom != null)
         {
+            sitPoint.isFull = false;
             sitPoint.Custom = null;
         }
     }
     private void GetChair()
     {
-        sitPoint = CusManager.Instance.RandomSit();
-        //sitPoint = CusManager.Instance.RandomSitPoint();
+        //sitPoint = CusManager.Instance.RandomSit();
+        sitPoint = CusManager.Instance.RandomSitPoint();
         sitPoint.Custom = this;
     }
     private void Update()

@@ -27,7 +27,6 @@ public class CusManager : Singleton<CusManager>
 
             var lisChair = lisTable[tableRandom].Chairs;
             int chairRandom = Random.Range(0, lisChair.Count);
-            //newChair = lisTable[tableRandom].Chairs[Random.Range(0, lisTable[tableRandom].Chairs.Count)];
             newChair = lisChair[chairRandom];
             if (newChair != null && !newChair.isFull)
             {

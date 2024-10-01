@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
                 if (interactable != null)
                 {
+                    if (interactable.transform.GetComponent<Chair>().isFull) return;
                     SetFocus(interactable);
                 }
             }
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
                 RemoveFocus();
             }
         }
+        
     }
     protected virtual void SetFocus(Interactable newFocus)
     {

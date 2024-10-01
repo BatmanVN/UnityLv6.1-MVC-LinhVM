@@ -9,6 +9,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private CustomAnim anim;
     [SerializeField] private Transform sitPoint;
+    [SerializeField] private float time;
 
     private void Start()
     {
