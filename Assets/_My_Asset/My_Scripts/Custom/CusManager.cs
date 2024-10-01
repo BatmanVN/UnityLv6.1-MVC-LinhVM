@@ -16,6 +16,7 @@ public class CusManager : Singleton<CusManager>
                 customs.Add(custom);
         }
     }
+    //dung Do While cho den khi dung dieu kien
     public Chair RandomSitPoint()
     {
         Chair newChair;
@@ -35,6 +36,8 @@ public class CusManager : Singleton<CusManager>
         } while (!newChair.isFull);
         return newChair;
     }
+
+    //Dung for de duyet CheckChair ben Table
     public Chair RandomSit()
     {
         Chair newChair;
