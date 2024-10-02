@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class SitPointManager : Singleton<SitPointManager>
 {
-    public List<Transform> sitPoints;
+    public List<Chair> sitPoints;
     void Start()
     {
         foreach (Transform table in transform)
         {
             foreach (Transform chair in table)
             {
-                foreach (Transform sitPoint in chair)
+                //foreach (Transform sitPoint in chair)
+                //{
+                if (chair.CompareTag("Chair"))
                 {
-                    if (sitPoint.CompareTag("SitPoint"))
+                    Chair chair1 = chair.GetComponent<Chair>();
+                    if (chair1 != null)
                     {
-                        sitPoints.Add(sitPoint);
+                        sitPoints.Add(chair1);
                     }
                 }
+                //}
             }
         }
     }

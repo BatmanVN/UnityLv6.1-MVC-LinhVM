@@ -6,7 +6,6 @@ public class JoyStickMove : MonoBehaviour
 {
     [SerializeField] protected CharacterController characterController;
     [SerializeField] protected VariableJoystick joyStick;
-    [SerializeField] protected Transform target;
     [SerializeField] private float speed;
     [SerializeField] protected float rotationSpeed;
     private bool isTrigger;

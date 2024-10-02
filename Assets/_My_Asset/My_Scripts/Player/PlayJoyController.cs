@@ -7,29 +7,42 @@ public class PlayJoyController : MonoBehaviour
     [SerializeField] protected JoyStickMove joyMove;
     [SerializeField] protected CharacterController character;
     [SerializeField] protected PlayJoyAnim anim;
+    [SerializeField] protected Transform target;
+    [SerializeField] private float time;
+    private Coroutine enableCharater;
     private bool isNear;
     private bool isMoving;
+    private bool asPos;
+    private void Start()
+    {
+        enableCharater = StartCoroutine(EnableController());
+    }
     protected void Move()
     {
         joyMove.PlayerMove();
-        if(!isNear)
+        if (!isNear)
             CheckChair();
         if (isNear)
         {
             Sitdown();
-            Debug.Log("Sit");
         }
         isMoving = true;
     }
-
+    protected IEnumerator EnableController()
+    {
+        yield return new WaitForSeconds(time);
+        character.enabled = true;
+        StopCoroutine(enableCharater);
+    }
     protected void Sitdown()
     {
         anim.Sitdown();
-        Invoke(nameof(EnableCharacter), 1f);
+        isMoving = false;
+        asPos = true;
+        StartCoroutine(EnableController());
     }
-    protected void EnableCharacter()
+    protected void StandUp()
     {
-        character.enabled = true;
         if (isMoving)
         {
             anim.StandUp();
@@ -39,24 +52,26 @@ public class PlayJoyController : MonoBehaviour
     protected void CheckChair()
     {
         var listPoint = SitPointManager.Instance.sitPoints;
-        for(int i = 0; i < listPoint.Count; i++)
+        for (int i = 0; i < listPoint.Count; i++)
         {
-            float distance = Vector3.Distance(transform.position, listPoint[i].position);
-            if (distance < 1f)
+            float distance = Vector3.Distance(transform.position, listPoint[i].transform.position);
+            if (distance < 4f)
             {
-                if (listPoint[i] != null)
+                if (listPoint[i] != null && !listPoint[i].isFull)
                 {
-                    Transform sitPoint = listPoint[i].Find("Chair");
-                    Vector3 rotate = (listPoint[i].position - sitPoint.position);
+                    Transform sitPoint = listPoint[i].transform.Find("SitPoint");
+                    Vector3 rotate = (sitPoint.position - listPoint[i].transform.position);
                     transform.rotation = Quaternion.LookRotation(rotate);
                     isNear = true;
-                    break;
+                    if(!asPos)
+                        transform.position = sitPoint.position;
                 }
             }
         }
     }
     private void Update()
     {
+        StandUp();
         Move();
     }
 }

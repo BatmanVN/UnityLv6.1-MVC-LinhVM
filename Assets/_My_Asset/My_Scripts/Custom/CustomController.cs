@@ -13,12 +13,12 @@ public class CustomController : MonoBehaviour
     [SerializeField] private float timeStandup;
     [SerializeField] private UnityEvent onSitdown;
     [SerializeField] private UnityEvent onStandup;
-    private bool isRandom;
     private bool move;
-
+    private Coroutine standUpTime;
     private void Start()
     {
         GetChair();
+        standUpTime = StartCoroutine(Standup());
     }
     private void Move()
     {
@@ -38,18 +38,20 @@ public class CustomController : MonoBehaviour
             Move();
         }
     }
-    private void Standup()
+    private IEnumerator Standup()
     {
+        yield return new WaitForSeconds(timeStandup);
         onStandup?.Invoke();
         RestChair();
         GetChair();
         move = false;
+        StopCoroutine(standUpTime);
     }
     private void Sitdown()
     {
         timeStandup = Random.Range(5, 7);
         onSitdown?.Invoke();
-        Invoke(nameof(Standup), timeStandup);
+        StartCoroutine(Standup());
         move = true;
     }
 
