@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_My_Asset/My_Scene/CafeRPG.unity
+    guid: 80f6496d0d6ea164f978048ec4285357
   m_configObjects: {}
